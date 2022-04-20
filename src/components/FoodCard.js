@@ -1,8 +1,12 @@
 import React from 'react'
 
-function FoodCard() {
+function FoodCard({dish}) {
   return (
-    <div>FoodCard</div>
+    <div>
+        <h1>{dish.name}</h1>
+        <h1>{dish.description}</h1>
+        <img src={dish.image}></img>
+    </div>
   )
 }
 

@@ -1,30 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect} from 'react'
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import About from './components/About';
 import Results from './components/Results';
 
+// need onClick handlers for NavBar to send data back about which route we're on and have the App handle that to determine which component to render
 function App() {
+  const [data, setData] = useState([]);
+
+
+  useEffect(() => {
+    fetch('http://localhost:3000/SimsCafe')
+    .then(res => res.json())
+    .then(data => setData(data))
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
-      <body>
-
-      </body>
+        <NavBar />
+        <Home data={data} />
     </div>
   );
 }

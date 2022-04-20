@@ -1,9 +1,13 @@
 import React from 'react'
 import FoodCard from './FoodCard'
 
-function Home() {
+function Home({data}) {
+    const menu = data.map((dish) => {
+        return <FoodCard key={dish.id}
+                         dish={dish} />
+    })
   return (
-    <div>Home</div>
+    <div>{menu}</div>
   )
 }
 
