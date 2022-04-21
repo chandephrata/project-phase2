@@ -9,11 +9,14 @@ function FoodDetail({currentDish, handleImageDetail}) {
   }
 
   return (
+    <div className='container'>
     <div className='ingredients'>Food Detail: {currentDish.name}
     <h1>{currentDish.name}</h1>
     <img className="foodPic" src={currentDish.image} alt={currentDish.name} onClick={handleImageClick}></img>
     <p>{currentDish.description}</p>
-    <p>{currentDish.ingredients}</p>
+    
+    </div>
+    <p className='ingredient'>{currentDish.ingredients}</p>
     </div>
   )
 }
