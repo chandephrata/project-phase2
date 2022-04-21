@@ -1,5 +1,5 @@
 import React from 'react'
- import "./FoodDetail.css"
+import "./FoodDetail.css"
 
 
 function FoodDetail({currentDish, handleImageDetail}) {
@@ -7,8 +7,6 @@ function FoodDetail({currentDish, handleImageDetail}) {
   function handleImageClick(event){
     handleImageDetail(event.target.alt)
   }
-  
-  console.log(currentDish)
 
   return (
     <div className='ingredients'>Food Detail: {currentDish.name}

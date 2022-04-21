@@ -1,11 +1,11 @@
 import React, { useState, useEffect} from 'react'
-import { render } from 'react-dom'
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Results from './components/Results';
-import NavBar from './components/NavBar';
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
+import Home from './components/Home'
+import About from './components/About'
+import Results from './components/Results'
+import NavBar from './components/NavBar'
 import "./App.css"
+const API = 'http://localhost:3000/SimsCafe/'
 
 function App() {
   const [data, setData] = useState([]);
@@ -20,28 +20,94 @@ function App() {
     switch(value) {
       case 'Gumbo':
         setGumboLikes(gumboLikes + 1);
+        fetch(`${API}1`, {
+              method: "PATCH",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                likes: gumboLikes,
+              })
+            })
         break;
       case 'Jambalaya':
         setJambaLikes(jambaLikes + 1);
+        fetch(`${API}2`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            likes: jambaLikes,
+          })
+        })
         break;
       case 'Bacon and Shrimp Sliders':
         setBaconShrimpLikes(baconShrimpLikes + 1);
+        fetch(`${API}3`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            likes: baconShrimpLikes,
+          })
+        })
         break;
       case 'Shrimp Stuffed Salmon':
         setShrimpSalmonLikes(shrimpSalmonLikes + 1);
+        fetch(`${API}4`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            likes: shrimpSalmonLikes,
+          })
+        })
         break;
       case 'Blackened Salmon with Rice & Peas':
         setBlackSalmonLikes(blackSalmonLikes + 1);
+        fetch(`${API}5`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            likes: blackSalmonLikes,
+          })
+        })
         break;
       case 'Surf and Turf':
         setSurfTurfLikes(surfTurfLikes + 1);
+        fetch(`${API}6`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            likes: surfTurfLikes,
+          })
+        })
         break;
       default: console.log("ERROR: Dish not found")
       }
   }
 
+  // function patchLikes(id){
+  //   fetch(`${API}${id}`, {
+  //     method: "PATCH",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({
+  //       likes: ,
+  //     })
+  //   })
+  // }
+
   useEffect(() => {
-    fetch('http://localhost:3000/SimsCafe')
+    fetch(API)
     .then(res => res.json())
     .then(data => setData(data))
   }, [])
