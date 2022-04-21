@@ -14,8 +14,9 @@
     border-color: yellow;
     padding: 8px;
     height: 350px;
+    position:relative; left:65px; top:5px;
 
-    background: linear-gradient(0deg, #131f0a 0%, #008552 100%);
+    background: linear-gradient(0deg, #2a4398 0%, #c4af0e 100%);
     
     /* float: left; */
 }
