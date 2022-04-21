@@ -1,5 +1,6 @@
 import React from 'react'
 import FoodCard from './FoodCard'
+import FoodDetail from './FoodDetail'
 import './Home.css'
 
 function Home({data}) {
@@ -8,7 +9,10 @@ function Home({data}) {
                          dish={dish} />
     })
   return (
-    <div className='home'>{menu}</div>
+    <div className='home'>
+    {menu}
+    <FoodDetail />
+    </div>
   )
 }
 
