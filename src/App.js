@@ -1,12 +1,12 @@
 import React, { useState, useEffect} from 'react'
 import { render } from 'react-dom'
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Results from './components/Results';
+import NavBar from './components/NavBar';
 import "./App.css"
 
-// need onClick handlers for NavBar to send data back about which route we're on and have the App handle that to determine which component to render
 function App() {
   const [data, setData] = useState([]);
   const [gumboLikes,        setGumboLikes]         = useState(0);
@@ -20,7 +20,7 @@ function App() {
     switch(value) {
       case 'Gumbo':
         setGumboLikes(gumboLikes + 1);
-        console.log(gumboLikes)
+        console.log(gumboLikes) 
         break;
       case 'Jambalaya':
         setJambaLikes(jambaLikes + 1);
@@ -48,22 +48,29 @@ function App() {
   }, [])
 
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
+        <NavBar />
         <header className="App-header"> Sim's Cafe
         </header>
-          <Routes>
-            <Route path="/" element={<Home data={data} handleLikeClick={incrementLikes}/>} />
-            <Route path="/about" element={<About />} />
-            <Route path="/results" element={<Results gumboLikes={gumboLikes}
-                                                     jambaLikes={jambaLikes}
-                                                     baconShrimpLikes={baconShrimpLikes}
-                                                     shrimpSalmonLikes={shrimpSalmonLikes}
-                                                     blackSalmonLikes={blackSalmonLikes}
-                                                     surfTurfLikes={surfTurfLikes} />} />
-          </Routes>
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/results">
+            <Results gumboLikes={gumboLikes}
+                     jambaLikes={jambaLikes}
+                     baconShrimpLikes={baconShrimpLikes}
+                     shrimpSalmonLikes={shrimpSalmonLikes}
+                     blackSalmonLikes={blackSalmonLikes}
+                     surfTurfLikes={surfTurfLikes} />
+          </Route>
+          <Route path="/">
+            <Home data={data} handleLikeClick={incrementLikes} />
+          </Route>
+        </Switch>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
