@@ -6,9 +6,8 @@ function FoodCard({dish}) {
     <div className='container'>
       <div className="simfood">
           <h1>{dish.name}</h1>
-          <img className="foodPic" src={dish.image}></img>
+          <img className="foodPic" src={dish.image} alt={dish.name}></img>
           <p>{dish.description}</p>
-          
       </div>
     </div>
   )

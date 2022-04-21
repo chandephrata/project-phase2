@@ -1,4 +1,6 @@
 import React, { useState, useEffect} from 'react'
+import { render } from 'react-dom'
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import About from './components/About';
@@ -17,12 +19,18 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-        <NavBar />
-        <Home data={data} />
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header"> Sim's Cafe
+        </header>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home data={data} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/results" element={<Results />} />
+          </Routes>
+      </div>
+    </Router>
   );
 }
 
