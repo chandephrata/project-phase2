@@ -1,11 +1,15 @@
 import React from 'react'
+import "./FoodCard.css"
 
 function FoodCard({dish}) {
   return (
-    <div>
-        <h1>{dish.name}</h1>
-        <h1>{dish.description}</h1>
-        <img src={dish.image}></img>
+    <div className='container'>
+      <div className="simfood">
+          <h1>{dish.name}</h1>
+          <img className="foodPic" src={dish.image}></img>
+          <p>{dish.description}</p>
+          
+      </div>
     </div>
   )
 }
