@@ -1,15 +1,18 @@
 import React from 'react'
 
-function Results({gumboLikes, jambaLikes, baconShrimpLikes, shrimpSalmonLikes, blackSalmonLikes, surfTurfLikes}) {
-  // display likes of each and choose winner
+function Results({data}) {
+  let likesArray = data.map((dish) => {
+    return dish.likes;
+  })
+  
   return (
     <div>Results
-      <h1>Gumbo: {gumboLikes} </h1>
-      <h1>Jambalaya: {jambaLikes} </h1>
-      <h1>Bacon and Shrimp Sliders: {baconShrimpLikes} </h1>
-      <h1>Shrimp Stuffed Salmon: {shrimpSalmonLikes} </h1>
-      <h1>Blackened Salmon with Rice & Peas: {blackSalmonLikes} </h1>
-      <h1>Surf and Turf: {surfTurfLikes} </h1>
+      <h1>Gumbo: {likesArray[0]} </h1>
+      <h1>Jambalaya: {likesArray[1]} </h1>
+      <h1>Bacon and Shrimp Sliders: {likesArray[2]} </h1>
+      <h1>Shrimp Stuffed Salmon: {likesArray[3]} </h1>
+      <h1>Blackened Salmon with Rice & Peas: {likesArray[4]} </h1>
+      <h1>Surf and Turf: {likesArray[5]} </h1>
     </div>
   )
 }

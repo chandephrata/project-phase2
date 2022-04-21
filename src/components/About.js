@@ -5,8 +5,8 @@ function About() {
     <div className='container'>
       <h1>About Us</h1>
       <h2>Stephen Simmons</h2>
-      <p>asdfasdf</p>
-      <p>---</p>
+      <p>Head Chef</p>
+      <p> blurb </p>
       <h2>Chandelier Ephrata</h2>
       <p>Sous-Chef </p>
       <p>I have been a sous-chef at Sim's cafe for 4 years, and we are the business of making people happy through food.</p>

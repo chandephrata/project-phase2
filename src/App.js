@@ -123,12 +123,13 @@ function App() {
             <About />
           </Route>
           <Route path="/results">
-            <Results gumboLikes={gumboLikes}
+            {/* <Results gumboLikes={gumboLikes}
                      jambaLikes={jambaLikes}
                      baconShrimpLikes={baconShrimpLikes}
                      shrimpSalmonLikes={shrimpSalmonLikes}
                      blackSalmonLikes={blackSalmonLikes}
-                     surfTurfLikes={surfTurfLikes} />
+                     surfTurfLikes={surfTurfLikes} /> */}
+            <Results data={data} />
           </Route>
           <Route path="/">
             <Home data={data} handleLikeClick={incrementLikes} />
