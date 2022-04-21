@@ -1,8 +1,10 @@
 import React from 'react'
 
-function FoodDetail() {
+function FoodDetail({currentDishDetail}) {
   return (
-    <div>FoodDetail</div>
+    <div>FoodDetail: {currentDishDetail}
+
+    </div>
   )
 }
 
