@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import About from './components/About';
 import Results from './components/Results';
+import "./App.css"
 
 // need onClick handlers for NavBar to send data back about which route we're on and have the App handle that to determine which component to render
 function App() {

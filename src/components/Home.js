@@ -1,5 +1,6 @@
 import React from 'react'
 import FoodCard from './FoodCard'
+import './Home.css'
 
 function Home({data}) {
     const menu = data.map((dish) => {
@@ -7,7 +8,7 @@ function Home({data}) {
                          dish={dish} />
     })
   return (
-    <div>{menu}</div>
+    <div className='home'>{menu}</div>
   )
 }
 
