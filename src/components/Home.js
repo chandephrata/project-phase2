@@ -4,16 +4,13 @@ import FoodDetail from './FoodDetail'
 import './Home.css'
 
 function Home({data, handleLikeClick}) {
-  const [currentDishDetail, setCurrentDishDetail] = useState("");
   const [currentDish, setCurrentDish] = useState({});
 
   function handleImageDetail(name){
-    setCurrentDishDetail(name);
     let currDish = data.find((dish) => {
-      return dish.name === currentDishDetail
+      return dish.name === name
     })
     setCurrentDish(currDish);
-    console.log(currentDish);
   }
 
   const menu = data.map((dish) => {
@@ -25,7 +22,7 @@ function Home({data, handleLikeClick}) {
   return (
     <div className='home'>
     {menu}
-    <FoodDetail currentDish={currentDish} currentDishDetail={currentDishDetail}/>
+    <FoodDetail currentDish={currentDish} />
     </div>
   )
 }

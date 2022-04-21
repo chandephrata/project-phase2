@@ -20,7 +20,6 @@ function App() {
     switch(value) {
       case 'Gumbo':
         setGumboLikes(gumboLikes + 1);
-        console.log(gumboLikes) 
         break;
       case 'Jambalaya':
         setJambaLikes(jambaLikes + 1);
