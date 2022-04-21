@@ -1,6 +1,6 @@
 import React from 'react'
 
-function FoodDetail({currentDishDetail}) {
+function FoodDetail({currentDish, currentDishDetail}) {
   return (
     <div>FoodDetail: {currentDishDetail}
 
