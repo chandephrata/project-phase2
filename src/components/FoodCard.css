@@ -10,9 +10,9 @@
     display: block;
     /* background-color: rgb(22, 22, 46); */
     color: rgb(8, 6, 0);
-    border-radius: 5px;
-    border-color: yellow;
-    padding: 8px;
+    border-radius: 55px;
+    border-color: rgb(5, 5, 5);
+    padding: 9px;
     height: 350px;
     position:relative; left:105px; top:5px;
 
@@ -29,4 +29,9 @@
     min-height: 10vw;
     max-width: 10vw;
     min-width: 10vw;
+}
+.likeButton {
+    color: rgb(50, 23, 112);
+    position:relative; left:235px; top:20px;
+    background: linear-gradient(0deg, #df531f 0%, #b6991a 100%);
 }
