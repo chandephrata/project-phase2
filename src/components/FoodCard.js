@@ -16,8 +16,8 @@ function FoodCard({dish, handleLikeClick, handleImageDetail}) {
           <h1>{dish.name}</h1>
           <img className="foodPic" src={dish.image} alt={dish.name} onClick={handleImageClick}></img>
           <p>{dish.description}</p>
+          </div>
           <button className="likeButton" value={dish.name} onClick={handleClick}>Like</button>
-      </div>
     </div>
   )
 }
